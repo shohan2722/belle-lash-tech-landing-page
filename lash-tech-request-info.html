@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Info & Tour Times — Belle Academy of Cosmetology</title>
+<meta name="description" content="Request information and tour times for the Belle Academy Lash Tech Program. Find your nearest Connecticut lash training location, confirm class availability, and learn about flexible payment plans.">
+
+<!-- Google Fonts: Cormorant Garamond + Manrope -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===================================================
+   DESIGN TOKENS — mirrors lash-tech-request-info.html
+   =================================================== */
+:root {
+  --bg:         #FAF7F2;
+  --bg-cream:   #FFFDF8;
+  --bg-blush:   #F7E8E8;
+  --bg-dark:    #2A1E1E;
+
+  --fg:         #171313;
+  --fg-espresso:#2A1E1E;
+  --fg-muted:   #6B5B5B;
+  --fg-light:   #F5EEE8;
+
+  --blush:      #E8B8BC;
+  --rose:       #DFA6AD;
+  --dusty-rose: #C98791;
+  --gold:       #C8A96A;
+  --gold-soft:  #B9975B;
+  --taupe:      #A88C7D;
+  --beige:      #E8DED3;
+  --pale-rose:  #EFE1DC;
+
+  --border:     rgba(168,140,125,0.25);
+  --border-strong: rgba(168,140,125,0.5);
+
+  --font-display: 'Cormorant Garamond', 'Didot', 'Bodoni MT', Georgia, serif;
+  --font-body:    'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.7;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul { list-style: none; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.12; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.6rem, 6vw, 5.4rem); }
+h2 { font-size: clamp(2rem, 3.8vw, 3.6rem); }
+h3 { font-size: clamp(1.4rem, 2.2vw, 2rem); }
+.display-italic { font-style: italic; }
+p { max-width: 64ch; }
+p + p { margin-top: 1em; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border-radius: var(--radius-sm); padding: 1em 2.4em;
+  transition: all 0.3s var(--ease); white-space: nowrap; cursor: pointer; border: none;
+}
+.btn-primary { background: var(--fg-espresso); color: var(--fg-light); }
+.btn-primary:hover { background: #3D2A2A; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(42,30,30,0.22); }
+.btn-ghost { background: transparent; color: var(--fg-light); border: 1px solid rgba(245,238,232,0.45); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+.btn-outline-dark { background: transparent; color: var(--fg-espresso); border: 1px solid var(--fg-espresso); }
+.btn-outline-dark:hover { background: var(--fg-espresso); color: var(--fg-light); }
+
+.container { width: min(100%, 1220px); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 4rem); }
+.section-pad { padding-block: clamp(4rem, 8vw, 8rem); }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+
+/* HEADER */
+#site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem clamp(1.25rem, 4vw, 4rem);
+  background: rgba(42,30,30,0.97);
+  box-shadow: 0 1px 0 rgba(200,169,106,0.18);
+  backdrop-filter: blur(8px);
+  transition: padding 0.4s var(--ease);
+}
+.header-logo { height: 64px; width: auto; object-fit: contain; filter: brightness(0) invert(1); transition: height 0.4s var(--ease); }
+.header-nav { display: flex; align-items: center; gap: 2rem; }
+.header-nav a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(245,238,232,0.75); transition: color 0.2s; }
+.header-nav a:hover { color: var(--gold); }
+
+/* MOBILE NAVIGATION DRAWER */
+.mobile-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+  padding: 0;
+}
+.mobile-nav-toggle .toggle-bar {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--fg-light);
+  transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+.mobile-nav-toggle.open .toggle-bar:first-child {
+  transform: translateY(5px) rotate(45deg);
+}
+.mobile-nav-toggle.open .toggle-bar:last-child {
+  transform: translateY(-5.5px) rotate(-45deg);
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  background: var(--bg-dark);
+  z-index: 105;
+  display: flex; align-items: center; justify-content: center;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
+  visibility: hidden;
+  padding: 2rem;
+}
+.mobile-menu-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-drawer-nav {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 2.2rem; text-align: center;
+}
+.mobile-drawer-link {
+  font-family: var(--font-display);
+  font-size: 2.2rem; font-weight: 300;
+  color: var(--fg-light); letter-spacing: 0.05em;
+  transition: color 0.3s var(--ease);
+}
+.mobile-drawer-link:hover { color: var(--gold); }
+.mobile-drawer-btn {
+  font-family: var(--font-body);
+  font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 1.1em 2.8em;
+  background: var(--gold); color: var(--bg-dark);
+}
+.mobile-drawer-btn:hover { background: var(--gold-soft); }
+#site-header.menu-open {
+  opacity: 1 !important;
+  background: var(--bg-dark) !important;
+}
+
+/* PAGE TOP PADDING (pushes content below fixed header) */
+.page-top { padding-top: 100px; }
+
+/* HERO BAR — subtle blush band under header */
+.page-hero-bar {
+  background: var(--bg-blush);
+  border-bottom: 1px solid var(--border);
+  padding-block: clamp(2.5rem, 4vw, 3.5rem);
+  text-align: center;
+}
+.page-hero-bar .eyebrow { margin-bottom: 0.8rem; text-align: center; margin-inline: auto; }
+.page-hero-bar h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin-bottom: 1.2rem;
+  max-width: 20ch;
+  margin-inline: auto;
+}
+.page-hero-bar .sub {
+  font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+  color: var(--fg-muted);
+  max-width: 60ch;
+  margin-inline: auto;
+  line-height: 1.8;
+}
+
+/* FORM SECTION */
+#request-form-section {
+  background: var(--bg);
+}
+.rf-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: clamp(2.5rem, 4vw, 4rem);
+  align-items: start;
+}
+
+/* FORM CARD */
+.form-card {
+  background: var(--bg-cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 24px rgba(42,30,30,0.07), 0 1px 0 rgba(255,255,255,0.7) inset;
+  padding: clamp(2rem, 3.5vw, 3rem);
+  overflow: hidden;
+}
+.form-card-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+/* HighLevel iframe embed */
+.hl-form-embed {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+  display: block;
+}
+
+/* TRUST CARD */
+.trust-card {
+  background: var(--bg-cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 24px rgba(42,30,30,0.07), 0 1px 0 rgba(255,255,255,0.7) inset;
+  padding: clamp(1.8rem, 2.5vw, 2.5rem);
+  position: sticky;
+  top: 100px;
+}
+.trust-card-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+.trust-card h3 {
+  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+  line-height: 1.25;
+  color: var(--fg-espresso);
+}
+.trust-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.8rem;
+}
+.trust-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--fg);
+  line-height: 1.55;
+}
+.trust-list-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-blush);
+  border: 1px solid rgba(201,135,145,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1em;
+}
+.trust-list-icon svg {
+  width: 10px;
+  height: 10px;
+  stroke: var(--dusty-rose);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.trust-card-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 1.6rem;
+}
+.trust-card-note {
+  font-size: 0.78rem;
+  color: var(--fg-muted);
+  line-height: 1.7;
+}
+.trust-card-note strong {
+  color: var(--fg-espresso);
+  font-weight: 600;
+}
+
+
+/* BACK LINK */
+.back-link-wrap {
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--gold); }
+.back-link svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* FOOTER */
+#footer { background: var(--fg-espresso); padding-block: 3rem; color: var(--fg-light); }
+.footer-inner { display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
+.footer-logo img { height: 84px; filter: brightness(0) invert(1); opacity: 1; }
+.footer-copy { font-size: 0.75rem; text-align: center; }
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { font-size: 0.73rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .rf-layout {
+    grid-template-columns: 1fr;
+  }
+  .trust-card {
+    position: static;
+    order: 2;
+  }
+  .form-card {
+    order: 1;
+  }
+}
+
+/* STICKY CTA BAR — mobile only */
+#sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--fg-espresso); padding: 0.9rem 1.5rem; display: none; align-items: center; justify-content: center; gap: 1rem; box-shadow: 0 -4px 20px rgba(42,30,30,0.2); border-top: 1px solid rgba(200,169,106,0.2); transform: translateY(100%); transition: transform 0.4s var(--ease); }
+#sticky-cta.visible { transform: none; }
+#sticky-cta .btn { flex: 1; justify-content: center; font-size: 0.78rem; padding: 0.85em 1.6em; }
+
+@media (max-width: 768px) {
+  #sticky-cta { display: flex; }
+  body { padding-bottom: 0; }
+  #footer { padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)); }
+  #sticky-cta {
+    bottom: env(safe-area-inset-bottom, 0px);
+    padding-bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 640px) {
+  .header-nav { display: none; }
+  .mobile-nav-toggle { display: flex; }
+  .page-hero-bar h1 { font-size: clamp(1.9rem, 8vw, 2.8rem); }
+}
+
+@media (max-width: 480px) {
+  .form-card, .trust-card { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  #sticky-cta { padding: 0.7rem 1rem; gap: 0.6rem; }
+  #sticky-cta .btn { padding: 0.7em 1.2em; font-size: 0.72rem; }
+}
+
+@media (max-width: 380px) {
+  #sticky-cta .btn { font-size: 0.65rem; padding: 0.6em 0.8em; }
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="lash-tech-request-info.html" aria-label="Belle Academy Home">
+    <img src="mqtq1j0u-mqsb1io8-header-footer-logo.webp" alt="Belle Academy of Cosmetology" class="header-logo" width="64" height="64">
+  </a>
+  <nav class="header-nav" aria-label="Main navigation">
+    <a href="lash-tech-request-info.html#programs">Programs</a>
+    <a href="lash-tech-request-info.html#how-it-works">How It Works</a>
+    <a href="lash-tech-request-info.html#about">About</a>
+    <a href="lash-tech-request-info.html#locations">Locations</a>
+    <a href="lash-tech-request-info.html" class="btn btn-ghost" style="padding: 0.65em 1.4em; font-size: 0.72rem; background: rgba(200,169,106,0.12); border-color: var(--gold); color: var(--gold);">Request Info</a>
+  </nav>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-nav-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+    <span class="toggle-bar"></span>
+    <span class="toggle-bar"></span>
+  </button>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu-drawer" aria-hidden="true">
+    <nav class="mobile-drawer-nav">
+      <a href="lash-tech-request-info.html#programs" class="mobile-drawer-link">Programs</a>
+      <a href="lash-tech-request-info.html#how-it-works" class="mobile-drawer-link">How It Works</a>
+      <a href="lash-tech-request-info.html#about" class="mobile-drawer-link">About</a>
+      <a href="lash-tech-request-info.html#locations" class="mobile-drawer-link">Locations</a>
+      <div style="margin-top: 1.5rem;">
+        <a href="lash-tech-request-info.html" class="btn btn-primary mobile-drawer-btn" style="background: var(--gold); color: var(--bg-dark);">Request Info</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO BAR -->
+<div class="page-top">
+  <div class="page-hero-bar">
+    <p class="eyebrow reveal">Request Information</p>
+    <h1 class="reveal reveal-delay-1">Request Info &amp; <em class="display-italic">Tour Times</em></h1>
+    <p class="sub reveal reveal-delay-2">Tell us where you live and what schedule works best. Belle Academy will help you confirm the closest lash training location, current class availability, payment options, and next tour time.</p>
+  </div>
+</div>
+
+<!-- FORM SECTION -->
+<section id="request-form-section" class="section-pad">
+  <div class="container">
+
+    <div class="back-link-wrap reveal">
+      <a href="lash-tech-request-info.html" class="back-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Back to Lash Tech Program
+      </a>
+    </div>
+
+    <div class="rf-layout">
+
+      <!-- FORM CARD -->
+      <div class="form-card reveal">
+        <span class="form-card-label">Lash Tech Program · Connecticut</span>
+        <iframe
+            src="https://link.multilevel.agency/widget/form/gAihwNKulEVzLuIhKOgs"
+            style="width:100%;height:100%;border:none;border-radius:20px"
+            id="inline-gAihwNKulEVzLuIhKOgs" 
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Eyelash Technician Ad Form - New"
+            data-height="728"
+            data-layout-iframe-id="inline-gAihwNKulEVzLuIhKOgs"
+            data-form-id="gAihwNKulEVzLuIhKOgs"
+            title="Eyelash Technician Ad Form - New"
+        >
+        </iframe>
+        <script src="https://link.multilevel.agency/js/form_embed.js"></script>
+      </div>
+
+      <!-- TRUST CARD -->
+      <aside class="trust-card reveal reveal-delay-1" aria-label="Why choose Belle Academy">
+        <span class="trust-card-eyebrow">Why Belle Academy</span>
+        <h3>A Beauty School <em class="display-italic">You Can Trust</em></h3>
+        <ul class="trust-list" role="list">
+          <li class="trust-list-item">
+            <span class="trust-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+            </span>
+            <span>NACCAS Accredited</span>
+          </li>
+          <li class="trust-list-item">
+            <span class="trust-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+            </span>
+            <span>State Certified by CT Office of Higher Education</span>
+          </li>
+          <li class="trust-list-item">
+            <span class="trust-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+            </span>
+            <span>50-hour Lash Tech Program</span>
+          </li>
+          <li class="trust-list-item">
+            <span class="trust-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+            </span>
+            <span>Graduate in 4 weeks</span>
+          </li>
+          <li class="trust-list-item">
+            <span class="trust-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+            </span>
+            <span>No high school diploma required</span>
+          </li>
+          <li class="trust-list-item">
+            <span class="trust-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+            </span>
+            <span>Flexible weekly payment plans</span>
+          </li>
+          <li class="trust-list-item">
+            <span class="trust-list-icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
+            </span>
+            <span>6 Connecticut lash training locations</span>
+          </li>
+        </ul>
+
+        <div class="trust-card-divider" aria-hidden="true"></div>
+
+        <p class="trust-card-note">
+          <strong>Your tour is free.</strong> No pressure to enroll. Come see the school, meet the instructors, and ask every question you have before making any decision.
+        </p>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="mqtq1j0u-mqsb1io8-header-footer-logo.webp" alt="Belle Academy of Cosmetology" width="168" height="84"></div>
+      <p class="footer-copy">© 2025 Belle Academy of Cosmetology · State Certified by CT Office of Higher Education · NACCAS Accredited</p>
+      <nav class="footer-links">
+        <a href="lash-tech-request-info.html#programs">Programs</a>
+        <a href="lash-tech-request-info.html#faq">FAQ</a>
+        <a href="lash-tech-request-info.html#locations">Locations</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<div id="sticky-cta" aria-label="Request info">
+  <a href="lash-tech-request-info.html" class="btn btn-primary">Request Info</a>
+  <a href="lash-tech-request-info.html" class="btn btn-ghost" style="border-color: rgba(200,169,106,0.4); color: var(--gold);">Find Location</a>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // Mobile Menu
+  var mobileToggle = document.querySelector('.mobile-nav-toggle');
+  var mobileDrawer = document.querySelector('.mobile-menu-drawer');
+  var header = document.getElementById('site-header');
+  var drawerLinks = document.querySelectorAll('.mobile-drawer-link, .mobile-drawer-btn');
+
+  if (mobileToggle && mobileDrawer) {
+    function openMenu() {
+      mobileToggle.classList.add('open');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      mobileDrawer.classList.add('open');
+      mobileDrawer.setAttribute('aria-hidden', 'false');
+      header.classList.add('menu-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileToggle.classList.remove('open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileDrawer.classList.remove('open');
+      mobileDrawer.setAttribute('aria-hidden', 'true');
+      header.classList.remove('menu-open');
+      document.body.style.overflow = '';
+    }
+    mobileToggle.addEventListener('click', function() {
+      if (mobileToggle.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+    });
+    drawerLinks.forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  // Scroll reveal
+  var reveals = document.querySelectorAll('.reveal');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(function(el) { revealObserver.observe(el); });
+
+  // Fire initial reveal for above-the-fold elements
+  setTimeout(function() {
+    reveals.forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.95) {
+        el.classList.add('visible');
+        revealObserver.unobserve(el);
+      }
+    });
+  }, 80);
+
+  // Sticky CTA scroll show/hide
+  var stickyCta = document.getElementById('sticky-cta');
+  if (stickyCta) {
+    var heroBar = document.querySelector('.page-hero-bar');
+    var heroBottom = heroBar ? heroBar.offsetHeight + 100 : 400;
+    var winHeight = window.innerHeight;
+    function updateStickyDimensions() {
+      if (heroBar) { heroBottom = heroBar.offsetHeight + 100; }
+      winHeight = window.innerHeight;
+    }
+    window.addEventListener('resize', updateStickyDimensions);
+    var ticking2 = false;
+    function onStickyScroll() {
+      if (!ticking2) {
+        window.requestAnimationFrame(function() {
+          if (window.scrollY > heroBottom - winHeight * 0.3) {
+            stickyCta.classList.add('visible');
+          } else {
+            stickyCta.classList.remove('visible');
+          }
+          ticking2 = false;
+        });
+        ticking2 = true;
+      }
+    }
+    window.addEventListener('scroll', onStickyScroll, { passive: true });
+    onStickyScroll();
+  }
+
+})();
+</script>
+
+</body>
+</html>
