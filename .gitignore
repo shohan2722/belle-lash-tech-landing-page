@@ -1,0 +1,15 @@
+# IDE & Build artifacts
+*.artifact.json
+.od-skills/
+.DS_Store
+.env
+.env.local
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build output
+dist/
+build/
