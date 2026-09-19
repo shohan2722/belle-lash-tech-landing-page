@@ -378,17 +378,16 @@ p + p { margin-top: 1em; }
 #testimonials { background: var(--bg-cream); }
 .testimonials-header { text-align: center; margin-bottom: clamp(3rem, 5vw, 5rem); }
 .testimonials-header .eyebrow { text-align: center; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; }
 .testimonial-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.2rem 2rem; position: relative; transition: box-shadow 0.3s var(--ease); }
 .testimonial-card:hover { box-shadow: 0 16px 48px rgba(168,140,125,0.15); }
-.testimonial-quote-mark { font-family: var(--font-display); font-size: 4.5rem; line-height: 1; color: var(--blush); margin-bottom: 0.5rem; font-weight: 300; }
+.testimonial-quote-mark { font-family: var(--font-display); font-size: 4.5rem; line-height: 1; color: var(--blush); margin-bottom: 0.5rem; font-weight: 400; }
+.testimonial-stars { color: var(--gold); font-size: 1.05rem; letter-spacing: 0.18em; margin-bottom: 1rem; }
+.testimonial-screenshot-wrap { background: var(--bg-cream); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.5rem; margin-bottom: 1.6rem; display: flex; justify-content: center; }
+.testimonial-screenshot { display: block; max-width: 100%; max-height: 300px; width: auto; height: auto; border-radius: 4px; }
 .testimonial-card blockquote { font-family: var(--font-display); font-size: 1.35rem; font-style: italic; font-weight: 400; line-height: 1.7; color: var(--fg-espresso); margin-bottom: 1.8rem; }
 .testimonial-author { display: flex; align-items: center; gap: 1rem; padding-top: 1.4rem; border-top: 1px solid var(--border); }
-.testimonial-author-photo-wrap { flex-shrink: 0; width: 68px; height: 68px; border-radius: 50%; border: 2px solid var(--blush); overflow: hidden; position: relative; background: var(--bg-cream); }
-.testimonial-author-photo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s var(--ease); }
-.testimonial-crop-laura { transform: scale(2.8); transform-origin: 65% 46%; }
-.testimonial-crop-anilia { transform: scale(2.8); transform-origin: 65% 46%; }
-.testimonial-crop-jordan { transform: scale(2.2); transform-origin: 55% 48%; }
+.testimonial-avatar { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--bg-blush); border: 1px solid rgba(201,135,145,0.4); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; color: var(--dusty-rose); }
 .testimonial-author-info { display: flex; flex-direction: column; gap: 0.2rem; }
 .testimonial-name { font-size: 0.82rem; font-weight: 700; color: var(--fg); letter-spacing: 0.05em; }
 .testimonial-credential { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
@@ -819,7 +818,7 @@ body { font-size: clamp(17px, 1.3vw, 19px); font-weight: 500; }
 .hiw-step-title { font-size: 1.35rem; }
 .hiw-step-body { font-size: 1.08rem; font-weight: 500; }
 .credential-item { font-size: 0.85rem; }
-.testimonial-card blockquote { font-size: 1.5rem; font-weight: 500; }
+.testimonial-card blockquote { font-size: 1.4rem; font-weight: 400; }
 .testimonial-name { font-size: 0.9rem; }
 .testimonial-credential { font-size: 0.8rem; }
 .for-me-item { font-size: 1.08rem; font-weight: 500; }
@@ -855,7 +854,7 @@ body { font-size: clamp(17px, 1.3vw, 19px); font-weight: 500; }
 }
 
 @media (max-width: 820px) {
-  .testimonial-card blockquote { font-size: 1.4rem; }
+  .testimonial-card blockquote { font-size: 1.3rem; }
 }
 @media (max-width: 768px) {
   .hero-trust-item { font-size: 0.78rem; }
@@ -1387,40 +1386,61 @@ body { font-size: clamp(17px, 1.3vw, 19px); font-weight: 500; }
     <div class="testimonials-grid">
       <div class="testimonial-card reveal reveal-delay-1">
         <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <blockquote>"Unbelievable! The staff &amp; students are wonderful. They are extremely attentive to all my needs."</blockquote>
+        <div class="testimonial-stars" aria-label="Five star review">★★★★★</div>
+        <blockquote>"The owner Mike is great. The teachers are all awesome. I am now a licensed nail tech thanks to Belle Academy! And now that I have graduated, me and my family go there for hair cuts!"</blockquote>
+        <div class="testimonial-screenshot-wrap">
+          <img class="testimonial-screenshot" src="review-shauna.png" alt="Screenshot of Shauna Addison's five-star Google review" loading="lazy" decoding="async">
+        </div>
         <div class="testimonial-author">
-          <div class="testimonial-author-photo-wrap">
-            <img class="testimonial-author-photo" src="mqtq1j9r-testimonial1.webp" alt="Laura S. Belle Academy graduate" width="68" height="68" loading="lazy" decoding="async">
-          </div>
+          <div class="testimonial-avatar" aria-hidden="true">S</div>
           <div class="testimonial-author-info">
-            <span class="testimonial-name">Laura S.</span>
-            <span class="testimonial-credential">Five-Star Review on Google</span>
+            <span class="testimonial-name">Shauna Addison</span>
+            <span class="testimonial-credential">Google Review</span>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-2">
         <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <blockquote>"Miss Odette is amazing! The students are wonderful as well. Give it a try, you won't regret it!"</blockquote>
+        <div class="testimonial-stars" aria-label="Five star review">★★★★★</div>
+        <blockquote>"The best school. I love that I've learned a lot and I'm growing and learning more everyday thank you to the school most of all, Jenny for believing in me and Selina for never giving up on calling me to come to the school. I appreciate it."</blockquote>
+        <div class="testimonial-screenshot-wrap">
+          <img class="testimonial-screenshot" src="review-marilyn-google.png" alt="Screenshot of Marilyn Montanez's five-star Google review" loading="lazy" decoding="async">
+        </div>
         <div class="testimonial-author">
-          <div class="testimonial-author-photo-wrap">
-            <img class="testimonial-author-photo" src="mqtq1j9r-testimonial2.webp" alt="Sophie C. Belle Academy graduate" width="68" height="68" loading="lazy" decoding="async">
-          </div>
+          <div class="testimonial-avatar" aria-hidden="true">M</div>
           <div class="testimonial-author-info">
-            <span class="testimonial-name">Sophie C.</span>
-            <span class="testimonial-credential">Five-Star Review on Google</span>
+            <span class="testimonial-name">Marilyn Montanez</span>
+            <span class="testimonial-credential">Google Review</span>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal reveal-delay-3">
         <div class="testimonial-quote-mark" aria-hidden="true">"</div>
-        <blockquote>"I just graduated from the lash tech course at Belle Academy and got my license. Now I'm thinking about taking the Lash course!"</blockquote>
+        <div class="testimonial-stars" aria-label="Five star review">★★★★★</div>
+        <blockquote>"Great School, Mike helped me get my license!! Wonderful instructors,<br>Helped me with GI bill issues,<br>Miss Simone, I am now working at Stacy's Salon in Danbury if the state asks you about your students job placement<br>Thank you for your time"</blockquote>
+        <div class="testimonial-screenshot-wrap">
+          <img class="testimonial-screenshot" src="review-michael.png" alt="Screenshot of Michael Dzamko's five-star Google review" loading="lazy" decoding="async">
+        </div>
         <div class="testimonial-author">
-          <div class="testimonial-author-photo-wrap">
-            <img class="testimonial-author-photo" src="mqtq1j9v-testimonial3.webp" alt="Shauna A. Belle Academy graduate" width="68" height="68" loading="lazy" decoding="async">
-          </div>
+          <div class="testimonial-avatar" aria-hidden="true">M</div>
           <div class="testimonial-author-info">
-            <span class="testimonial-name">Shauna A.</span>
-            <span class="testimonial-credential">Five-Star Review on Google</span>
+            <span class="testimonial-name">Michael Dzamko</span>
+            <span class="testimonial-credential">Google Review</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+        <div class="testimonial-stars" aria-label="Five star review">★★★★★</div>
+        <blockquote>"Thank you Belle Academy Of Cosmetology. I graduated in June 2 of this year in Waterbury Ct and it was the best experience and the best decision I made to go back to school I learned a lot, I'm doing so well. I really appreciate it lots of blessings and thank you ."</blockquote>
+        <div class="testimonial-screenshot-wrap">
+          <img class="testimonial-screenshot" src="review-glam-nails.png" alt="Screenshot of Glam Nails by Marilyn's Facebook recommendation" loading="lazy" decoding="async">
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">G</div>
+          <div class="testimonial-author-info">
+            <span class="testimonial-name">Glam Nails by Marilyn</span>
+            <span class="testimonial-credential">Facebook Recommendation</span>
           </div>
         </div>
       </div>
