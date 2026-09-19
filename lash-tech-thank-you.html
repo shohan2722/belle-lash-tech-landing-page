@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Request Received — Belle Academy of Cosmetology</title>
+<title>Request Received · Belle Academy of Cosmetology</title>
 <meta name="description" content="Your request to Belle Academy of Cosmetology has been received. A team member will contact you soon about the Lash Tech Program, schedules, locations, and tour times.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <!-- Prevent indexing of thank-you page -->
 <meta name="robots" content="noindex, nofollow">
 
@@ -56,9 +59,9 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font-body);
-  font-size: clamp(15px, 1.1vw, 17px);
+  font-size: clamp(17px, 1.3vw, 19px);
   line-height: 1.7;
-  font-weight: 400;
+  font-weight: 500;
   overflow-x: hidden;
 }
 img { display: block; max-width: 100%; height: auto; }
@@ -68,7 +71,7 @@ ul { list-style: none; }
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -85,7 +88,7 @@ p + p { margin-top: 1em; }
 
 .btn {
   display: inline-flex; align-items: center; gap: 0.5em;
-  font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
+  font-family: var(--font-body); font-size: 0.92rem; font-weight: 600;
   letter-spacing: 0.1em; text-transform: uppercase;
   border-radius: var(--radius-sm); padding: 1em 2.4em;
   transition: all 0.3s var(--ease); white-space: nowrap; cursor: pointer; border: none;
@@ -118,7 +121,7 @@ p + p { margin-top: 1em; }
 }
 .header-logo { height: 64px; width: auto; object-fit: contain; filter: brightness(0) invert(1); transition: height 0.4s var(--ease); }
 .header-nav { display: flex; align-items: center; gap: 2rem; }
-.header-nav a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(245,238,232,0.75); transition: color 0.2s; }
+.header-nav a { font-size: 0.88rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(245,238,232,0.75); transition: color 0.2s; }
 .header-nav a:hover { color: var(--gold); }
 
 /* MOBILE NAVIGATION DRAWER */
@@ -156,12 +159,12 @@ p + p { margin-top: 1em; }
 .mobile-menu-drawer.open { transform: translateY(0); opacity: 1; visibility: visible; }
 .mobile-drawer-nav { display: flex; flex-direction: column; align-items: center; gap: 2.2rem; text-align: center; }
 .mobile-drawer-link {
-  font-family: var(--font-display); font-size: 2.2rem; font-weight: 300;
+  font-family: var(--font-display); font-size: 2.2rem; font-weight: 400;
   color: var(--fg-light); letter-spacing: 0.05em; transition: color 0.3s var(--ease);
 }
 .mobile-drawer-link:hover { color: var(--gold); }
 .mobile-drawer-btn {
-  font-family: var(--font-body); font-size: 0.85rem; letter-spacing: 0.1em;
+  font-family: var(--font-body); font-size: 0.95rem; letter-spacing: 0.1em;
   text-transform: uppercase; padding: 1.1em 2.8em;
   background: var(--gold); color: var(--bg-dark);
 }
@@ -186,7 +189,7 @@ p + p { margin-top: 1em; }
   margin-inline: auto;
 }
 .page-hero-bar .sub {
-  font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
   color: var(--fg-muted);
   max-width: 58ch;
   margin-inline: auto;
@@ -234,7 +237,7 @@ p + p { margin-top: 1em; }
   padding: clamp(2rem, 3.5vw, 3rem);
 }
 .confirm-card-eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -252,7 +255,7 @@ p + p { margin-top: 1em; }
   display: flex;
   align-items: flex-start;
   gap: 0.9rem;
-  font-size: clamp(0.92rem, 1.05vw, 1rem);
+  font-size: clamp(1.05rem, 1.2vw, 1.15rem);
   color: var(--fg);
   line-height: 1.6;
 }
@@ -276,7 +279,7 @@ p + p { margin-top: 1em; }
   margin-bottom: 1.8rem;
 }
 .confirm-note {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: var(--fg-muted);
   line-height: 1.75;
   max-width: 54ch;
@@ -292,7 +295,7 @@ p + p { margin-top: 1em; }
   text-align: center;
 }
 .confirm-cta-note {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--fg-muted);
   letter-spacing: 0.03em;
 }
@@ -301,9 +304,9 @@ p + p { margin-top: 1em; }
 #footer { background: var(--fg-espresso); padding-block: 3rem; color: var(--fg-light); }
 .footer-inner { display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
 .footer-logo img { height: 84px; filter: brightness(0) invert(1); opacity: 1; }
-.footer-copy { font-size: 0.75rem; text-align: center; }
+.footer-copy { font-size: 0.88rem; text-align: center; }
 .footer-links { display: flex; gap: 2rem; }
-.footer-links a { font-size: 0.73rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+.footer-links a { font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
 .footer-links a:hover { color: var(--gold); }
 
 /* ─── RESPONSIVE ─── */
@@ -331,7 +334,7 @@ p + p { margin-top: 1em; }
     <a href="index.html#how-it-works">How It Works</a>
     <a href="index.html#about">About</a>
     <a href="index.html#locations">Locations</a>
-    <a href="lash-tech-request-info.html" class="btn btn-ghost" style="padding:0.65em 1.4em;font-size:0.72rem;background:rgba(200,169,106,0.12);border-color:var(--gold);color:var(--gold);">Request Info</a>
+    <a href="lash-tech-request-info.html" class="btn btn-ghost" style="padding:0.65em 1.4em;font-size:0.85rem;background:rgba(200,169,106,0.12);border-color:var(--gold);color:var(--gold);">Request Info</a>
   </nav>
 
   <!-- Mobile Toggle -->
@@ -359,7 +362,7 @@ p + p { margin-top: 1em; }
   <div class="page-hero-bar">
     <p class="eyebrow reveal">Request Received</p>
     <h1 class="reveal reveal-delay-1">Thank You. Belle Academy <em class="display-italic">Received Your Request.</em></h1>
-    <p class="sub reveal reveal-delay-2">A Belle Academy team member will contact you soon to help confirm your nearest lash training location, current schedule options, payment plan details, and available tour times.</p>
+    <p class="sub reveal reveal-delay-2">A team member will contact you soon to confirm your nearest location and tour times.</p>
   </div>
 </div>
 
@@ -396,7 +399,7 @@ p + p { margin-top: 1em; }
             <span class="confirm-list-icon" aria-hidden="true">
               <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
             </span>
-            <span>Your tour is free — no cost, no obligation.</span>
+            <span>Your tour is free. No cost, no obligation.</span>
           </li>
           <li class="confirm-list-item">
             <span class="confirm-list-icon" aria-hidden="true">
@@ -415,7 +418,7 @@ p + p { margin-top: 1em; }
         <div class="confirm-divider" aria-hidden="true"></div>
 
         <p class="confirm-note">
-          <strong>Come see the school first.</strong> Tour the training location, meet the instructors, and ask every question you have — before making any decision.
+          <strong>Come see the school first.</strong> Tour the training location, meet the instructors, and ask every question you have before making any decision.
         </p>
       </div>
 
@@ -441,7 +444,7 @@ p + p { margin-top: 1em; }
       <div class="footer-logo">
         <img src="mqtq1j0u-mqsb1io8-header-footer-logo.webp" alt="Belle Academy of Cosmetology" width="168" height="84">
       </div>
-      <p class="footer-copy">© 2025 Belle Academy of Cosmetology · State Certified by CT Office of Higher Education · NACCAS Accredited</p>
+      <p class="footer-copy">© 2025 Belle Academy of Cosmetology · Licensed by the Connecticut Department of Public Health</p>
       <nav class="footer-links">
         <a href="index.html#programs">Programs</a>
         <a href="index.html#faq">FAQ</a>

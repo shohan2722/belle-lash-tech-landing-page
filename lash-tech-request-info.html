@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Request Info & Tour Times — Belle Academy of Cosmetology</title>
+<title>Request Info &amp; Tour Times · Belle Academy of Cosmetology</title>
 <meta name="description" content="Request information and tour times for the Belle Academy Lash Tech Program. Find your nearest Connecticut lash training location, confirm class availability, and learn about flexible payment plans.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
 <!-- Google Fonts: Cormorant Garamond + Manrope -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,9 +57,9 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font-body);
-  font-size: clamp(15px, 1.1vw, 17px);
+  font-size: clamp(17px, 1.3vw, 19px);
   line-height: 1.7;
-  font-weight: 400;
+  font-weight: 500;
   overflow-x: hidden;
 }
 img { display: block; max-width: 100%; height: auto; }
@@ -66,7 +69,7 @@ ul { list-style: none; }
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -82,7 +85,7 @@ p + p { margin-top: 1em; }
 
 .btn {
   display: inline-flex; align-items: center; gap: 0.5em;
-  font-family: var(--font-body); font-size: 0.82rem; font-weight: 600;
+  font-family: var(--font-body); font-size: 0.92rem; font-weight: 600;
   letter-spacing: 0.1em; text-transform: uppercase;
   border-radius: var(--radius-sm); padding: 1em 2.4em;
   transition: all 0.3s var(--ease); white-space: nowrap; cursor: pointer; border: none;
@@ -114,7 +117,7 @@ p + p { margin-top: 1em; }
 }
 .header-logo { height: 64px; width: auto; object-fit: contain; filter: brightness(0) invert(1); transition: height 0.4s var(--ease); }
 .header-nav { display: flex; align-items: center; gap: 2rem; }
-.header-nav a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(245,238,232,0.75); transition: color 0.2s; }
+.header-nav a { font-size: 0.88rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(245,238,232,0.75); transition: color 0.2s; }
 .header-nav a:hover { color: var(--gold); }
 
 /* MOBILE NAVIGATION DRAWER */
@@ -167,14 +170,14 @@ p + p { margin-top: 1em; }
 }
 .mobile-drawer-link {
   font-family: var(--font-display);
-  font-size: 2.2rem; font-weight: 300;
+  font-size: 2.2rem; font-weight: 400;
   color: var(--fg-light); letter-spacing: 0.05em;
   transition: color 0.3s var(--ease);
 }
 .mobile-drawer-link:hover { color: var(--gold); }
 .mobile-drawer-btn {
   font-family: var(--font-body);
-  font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 0.95rem; letter-spacing: 0.1em; text-transform: uppercase;
   padding: 1.1em 2.8em;
   background: var(--gold); color: var(--bg-dark);
 }
@@ -202,7 +205,7 @@ p + p { margin-top: 1em; }
   margin-inline: auto;
 }
 .page-hero-bar .sub {
-  font-size: clamp(0.9rem, 1.15vw, 1.05rem);
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
   color: var(--fg-muted);
   max-width: 60ch;
   margin-inline: auto;
@@ -230,7 +233,7 @@ p + p { margin-top: 1em; }
   overflow: hidden;
 }
 .form-card-label {
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -257,7 +260,7 @@ p + p { margin-top: 1em; }
   top: 100px;
 }
 .trust-card-eyebrow {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -282,7 +285,7 @@ p + p { margin-top: 1em; }
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--fg);
   line-height: 1.55;
 }
@@ -313,7 +316,7 @@ p + p { margin-top: 1em; }
   margin-bottom: 1.6rem;
 }
 .trust-card-note {
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   color: var(--fg-muted);
   line-height: 1.7;
 }
@@ -333,7 +336,7 @@ p + p { margin-top: 1em; }
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -351,9 +354,9 @@ p + p { margin-top: 1em; }
 #footer { background: var(--fg-espresso); padding-block: 3rem; color: var(--fg-light); }
 .footer-inner { display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
 .footer-logo img { height: 84px; filter: brightness(0) invert(1); opacity: 1; }
-.footer-copy { font-size: 0.75rem; text-align: center; }
+.footer-copy { font-size: 0.88rem; text-align: center; }
 .footer-links { display: flex; gap: 2rem; }
-.footer-links a { font-size: 0.73rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
+.footer-links a { font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
 .footer-links a:hover { color: var(--gold); }
 
 /* RESPONSIVE */
@@ -373,7 +376,7 @@ p + p { margin-top: 1em; }
 /* STICKY CTA BAR — mobile only */
 #sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--fg-espresso); padding: 0.9rem 1.5rem; display: none; align-items: center; justify-content: center; gap: 1rem; box-shadow: 0 -4px 20px rgba(42,30,30,0.2); border-top: 1px solid rgba(200,169,106,0.2); transform: translateY(100%); transition: transform 0.4s var(--ease); }
 #sticky-cta.visible { transform: none; }
-#sticky-cta .btn { flex: 1; justify-content: center; font-size: 0.78rem; padding: 0.85em 1.6em; }
+#sticky-cta .btn { flex: 1; justify-content: center; font-size: 0.85rem; padding: 0.85em 1.6em; }
 
 @media (max-width: 768px) {
   #sticky-cta { display: flex; }
@@ -397,26 +400,26 @@ p + p { margin-top: 1em; }
 
 @media (max-width: 480px) {
   #sticky-cta { padding: 0.7rem 1rem; gap: 0.6rem; }
-  #sticky-cta .btn { padding: 0.7em 1.2em; font-size: 0.72rem; }
+  #sticky-cta .btn { padding: 0.7em 1.2em; font-size: 0.8rem; }
 }
 
 @media (max-width: 380px) {
-  #sticky-cta .btn { font-size: 0.65rem; padding: 0.6em 0.8em; }
+  #sticky-cta .btn { font-size: 0.72rem; padding: 0.6em 0.8em; }
 }
 </style>
 </head>
 <body>
 
 <header id="site-header">
-  <a href="lash-tech-request-info.html" aria-label="Belle Academy Home">
+  <a href="index.html" aria-label="Belle Academy Home">
     <img src="mqtq1j0u-mqsb1io8-header-footer-logo.webp" alt="Belle Academy of Cosmetology" class="header-logo" width="64" height="64">
   </a>
   <nav class="header-nav" aria-label="Main navigation">
-    <a href="lash-tech-request-info.html#programs">Programs</a>
-    <a href="lash-tech-request-info.html#how-it-works">How It Works</a>
-    <a href="lash-tech-request-info.html#about">About</a>
-    <a href="lash-tech-request-info.html#locations">Locations</a>
-    <a href="lash-tech-request-info.html" class="btn btn-ghost" style="padding: 0.65em 1.4em; font-size: 0.72rem; background: rgba(200,169,106,0.12); border-color: var(--gold); color: var(--gold);">Request Info</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="index.html#how-it-works">How It Works</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#locations">Locations</a>
+    <a href="lash-tech-request-info.html" class="btn btn-ghost" style="padding: 0.65em 1.4em; font-size: 0.85rem; background: rgba(200,169,106,0.12); border-color: var(--gold); color: var(--gold);">Request Info</a>
   </nav>
 
   <!-- Mobile Menu Toggle -->
@@ -428,10 +431,10 @@ p + p { margin-top: 1em; }
   <!-- Mobile Menu Drawer -->
   <div class="mobile-menu-drawer" aria-hidden="true">
     <nav class="mobile-drawer-nav">
-      <a href="lash-tech-request-info.html#programs" class="mobile-drawer-link">Programs</a>
-      <a href="lash-tech-request-info.html#how-it-works" class="mobile-drawer-link">How It Works</a>
-      <a href="lash-tech-request-info.html#about" class="mobile-drawer-link">About</a>
-      <a href="lash-tech-request-info.html#locations" class="mobile-drawer-link">Locations</a>
+      <a href="index.html#programs" class="mobile-drawer-link">Programs</a>
+      <a href="index.html#how-it-works" class="mobile-drawer-link">How It Works</a>
+      <a href="index.html#about" class="mobile-drawer-link">About</a>
+      <a href="index.html#locations" class="mobile-drawer-link">Locations</a>
       <div style="margin-top: 1.5rem;">
         <a href="lash-tech-request-info.html" class="btn btn-primary mobile-drawer-btn" style="background: var(--gold); color: var(--bg-dark);">Request Info</a>
       </div>
@@ -444,7 +447,7 @@ p + p { margin-top: 1em; }
   <div class="page-hero-bar">
     <p class="eyebrow reveal">Request Information</p>
     <h1 class="reveal reveal-delay-1">Request Info &amp; <em class="display-italic">Tour Times</em></h1>
-    <p class="sub reveal reveal-delay-2">Tell us where you live and what schedule works best. Belle Academy will help you confirm the closest lash training location, current class availability, payment options, and next tour time.</p>
+    <p class="sub reveal reveal-delay-2">Tell us where you live and your schedule. We'll confirm your nearest location, class availability, and tour times.</p>
   </div>
 </div>
 
@@ -453,7 +456,7 @@ p + p { margin-top: 1em; }
   <div class="container">
 
     <div class="back-link-wrap reveal">
-      <a href="lash-tech-request-info.html" class="back-link">
+      <a href="index.html" class="back-link">
         <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
         Back to Lash Tech Program
       </a>
@@ -494,7 +497,7 @@ p + p { margin-top: 1em; }
             <span class="trust-list-icon" aria-hidden="true">
               <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
             </span>
-            <span>NACCAS Accredited</span>
+            <span>Licensed CT Beauty School</span>
           </li>
           <li class="trust-list-item">
             <span class="trust-list-icon" aria-hidden="true">
@@ -530,7 +533,7 @@ p + p { margin-top: 1em; }
             <span class="trust-list-icon" aria-hidden="true">
               <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
             </span>
-            <span>6 Connecticut lash training locations</span>
+            <span>14 Connecticut lash training locations</span>
           </li>
         </ul>
 
@@ -550,11 +553,11 @@ p + p { margin-top: 1em; }
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo"><img src="mqtq1j0u-mqsb1io8-header-footer-logo.webp" alt="Belle Academy of Cosmetology" width="168" height="84"></div>
-      <p class="footer-copy">© 2025 Belle Academy of Cosmetology · State Certified by CT Office of Higher Education · NACCAS Accredited</p>
+      <p class="footer-copy">© 2025 Belle Academy of Cosmetology · Licensed by the Connecticut Department of Public Health</p>
       <nav class="footer-links">
-        <a href="lash-tech-request-info.html#programs">Programs</a>
-        <a href="lash-tech-request-info.html#faq">FAQ</a>
-        <a href="lash-tech-request-info.html#locations">Locations</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#locations">Locations</a>
       </nav>
     </div>
   </div>
