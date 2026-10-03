@@ -3,17 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Request Received · Belle Academy of Cosmetology</title>
-<meta name="description" content="Your request to Belle Academy of Cosmetology has been received. A team member will contact you soon about the Lash Tech Program, schedules, locations, and tour times.">
+<title>Terms &amp; Conditions Â· Belle Academy of Cosmetology</title>
+<meta name="description" content="Belle Academy of Cosmetology terms and conditions, including SMS messaging terms, opt-out instructions, and support information.">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<!-- Prevent indexing of thank-you page -->
-<meta name="robots" content="noindex, nofollow">
 
 <style>
 /* ===================================================
-   DESIGN TOKENS — mirrors Belle Academy design system
+   DESIGN TOKENS
    =================================================== */
 :root {
   --bg:         #FAF7F2;
@@ -27,13 +25,9 @@
   --fg-light:   #F5EEE8;
 
   --blush:      #E8B8BC;
-  --rose:       #DFA6AD;
   --dusty-rose: #C98791;
   --gold:       #C8A96A;
   --gold-soft:  #B9975B;
-  --taupe:      #A88C7D;
-  --beige:      #E8DED3;
-  --pale-rose:  #EFE1DC;
 
   --border:     rgba(168,140,125,0.25);
   --border-strong: rgba(168,140,125,0.5);
@@ -71,15 +65,11 @@ ul { list-style: none; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-  text-align: center;
 }
-h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.12; letter-spacing: -0.01em; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.15; letter-spacing: -0.01em; }
 h1 { font-size: clamp(2.6rem, 6vw, 5.4rem); }
-h2 { font-size: clamp(2rem, 3.8vw, 3.6rem); }
-h3 { font-size: clamp(1.4rem, 2.2vw, 2rem); }
 .display-italic { font-style: italic; }
 p { max-width: 64ch; }
-p + p { margin-top: 1em; }
 
 .btn {
   display: inline-flex; align-items: center; gap: 0.5em;
@@ -92,19 +82,16 @@ p + p { margin-top: 1em; }
 .btn-primary:hover { background: #3D2A2A; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(42,30,30,0.22); }
 .btn-ghost { background: transparent; color: var(--fg-light); border: 1px solid rgba(245,238,232,0.45); }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
-.btn-outline-dark { background: transparent; color: var(--fg-espresso); border: 1px solid var(--fg-espresso); }
-.btn-outline-dark:hover { background: var(--fg-espresso); color: var(--fg-light); }
 
 .container { width: min(100%, 1220px); margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 4rem); }
-.section-pad { padding-block: clamp(4rem, 8vw, 8rem); }
+.section-pad { padding-block: clamp(3rem, 6vw, 5rem); }
 
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
 .reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.12s; }
-.reveal-delay-2 { transition-delay: 0.24s; }
-.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
 
-/* ─── HEADER ─── */
+/* HEADER */
 #site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
@@ -121,31 +108,19 @@ p + p { margin-top: 1em; }
 
 /* MOBILE NAVIGATION DRAWER */
 .mobile-nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 12px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 110;
-  padding: 0;
+  display: none; flex-direction: column; justify-content: space-between;
+  width: 28px; height: 12px; background: transparent; border: none; cursor: pointer; z-index: 110; padding: 0;
 }
 .mobile-nav-toggle .toggle-bar {
-  width: 100%;
-  height: 1.5px;
-  background-color: var(--fg-light);
+  width: 100%; height: 1.5px; background-color: var(--fg-light);
   transition: transform 0.3s var(--ease), background-color 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 .mobile-nav-toggle.open .toggle-bar:first-child { transform: translateY(5px) rotate(45deg); }
-.mobile-nav-toggle.open .toggle-bar:last-child  { transform: translateY(-5.5px) rotate(-45deg); }
+.mobile-nav-toggle.open .toggle-bar:last-child { transform: translateY(-5.5px) rotate(-45deg); }
 
 .mobile-menu-drawer {
-  position: fixed; top: 0; left: 0;
-  width: 100%; height: 100vh;
-  background: var(--bg-dark);
-  z-index: 105;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+  background: var(--bg-dark); z-index: 105;
   display: flex; align-items: center; justify-content: center;
   transform: translateY(-100%); opacity: 0;
   transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
@@ -169,133 +144,52 @@ p + p { margin-top: 1em; }
 /* PAGE TOP PADDING */
 .page-top { padding-top: 100px; }
 
-/* ─── HERO BAR ─── */
+/* HERO BAR */
 .page-hero-bar {
   background: var(--bg-blush);
   border-bottom: 1px solid var(--border);
-  padding-block: clamp(2.5rem, 5vw, 4rem);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
   text-align: center;
 }
 .page-hero-bar .eyebrow { margin-bottom: 0.9rem; display: block; max-width: 100%; margin-inline: auto; }
-.page-hero-bar h1 {
-  font-size: clamp(2.2rem, 5vw, 4.2rem);
-  margin-bottom: 1.4rem;
-  max-width: 24ch;
-  margin-inline: auto;
-}
-.page-hero-bar .sub {
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  color: var(--fg-muted);
-  max-width: 58ch;
-  margin-inline: auto;
-  line-height: 1.85;
-}
+.page-hero-bar h1 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1.2rem; max-width: 24ch; margin-inline: auto; }
+.page-hero-bar .sub { font-size: clamp(1.05rem, 1.3vw, 1.2rem); color: var(--fg-muted); max-width: 58ch; margin-inline: auto; line-height: 1.8; }
 
-/* ─── CONFIRMATION SECTION ─── */
-#confirmation-section {
-  background: var(--bg);
+/* LEGAL CONTENT */
+#legal-section { background: var(--bg); }
+.legal-wrap { max-width: 860px; margin-inline: auto; }
+.back-link-wrap { padding-block: 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--fg-muted); transition: color 0.2s;
 }
-.confirm-layout {
-  max-width: 720px;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(2rem, 3.5vw, 3rem);
-}
+.back-link:hover { color: var(--gold); }
+.back-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-/* Checkmark icon */
-.confirm-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--bg-blush);
-  border: 1.5px solid rgba(201,135,145,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.confirm-icon svg {
-  width: 28px; height: 28px;
-  stroke: var(--dusty-rose); fill: none;
-  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-}
-
-/* Confirmation card */
-.confirm-card {
-  width: 100%;
+.legal {
   background: var(--bg-cream);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 32px rgba(42,30,30,0.08), 0 1px 0 rgba(255,255,255,0.8) inset;
-  padding: clamp(2rem, 3.5vw, 3rem);
+  box-shadow: 0 4px 24px rgba(42,30,30,0.07), 0 1px 0 rgba(255,255,255,0.7) inset;
+  padding: clamp(1.6rem, 3.5vw, 3rem);
 }
-.confirm-card-eyebrow {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 1.4rem;
-}
-.confirm-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  margin-bottom: 2rem;
-}
-.confirm-list-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
-  font-size: clamp(1.05rem, 1.2vw, 1.15rem);
-  color: var(--fg);
-  line-height: 1.6;
-}
-.confirm-list-icon {
-  flex-shrink: 0;
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  background: var(--bg-blush);
-  border: 1px solid rgba(201,135,145,0.35);
-  display: flex; align-items: center; justify-content: center;
-  margin-top: 0.15em;
-}
-.confirm-list-icon svg {
-  width: 11px; height: 11px;
-  stroke: var(--dusty-rose); fill: none;
-  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
-}
-.confirm-divider {
-  height: 1px;
-  background: var(--border);
-  margin-bottom: 1.8rem;
-}
-.confirm-note {
-  font-size: 0.92rem;
-  color: var(--fg-muted);
-  line-height: 1.75;
-  max-width: 54ch;
-}
-.confirm-note strong { color: var(--fg-espresso); font-weight: 600; }
+.legal h2 { font-size: clamp(1.5rem, 2.4vw, 2rem); color: var(--fg-espresso); margin: 2.2rem 0 0.8rem; }
+.legal h2:first-of-type { margin-top: 0; }
+.legal h3 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; color: var(--fg-espresso); margin: 1.5rem 0 0.5rem; }
+.legal p { max-width: 100%; color: var(--fg-muted); line-height: 1.85; font-size: 1rem; }
+.legal p + p { margin-top: 0.9rem; }
+.legal ul { margin: 0.6rem 0 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.legal ul li { position: relative; padding-left: 1.25rem; color: var(--fg-muted); line-height: 1.75; font-size: 1rem; }
+.legal ul li::before { content: 'â€¢'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+.legal strong { color: var(--fg-espresso); font-weight: 700; }
+.legal a { color: var(--dusty-rose); text-decoration: underline; text-underline-offset: 2px; }
+.legal a:hover { color: var(--gold); }
+.legal-updated { margin-top: 2.2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--fg-muted); }
+.legal-contact { margin-top: 0.4rem; color: var(--fg-muted); line-height: 1.8; font-size: 1rem; }
+.legal-contact strong { color: var(--fg-espresso); }
 
-/* CTA area */
-.confirm-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-  text-align: center;
-}
-.confirm-cta-note {
-  font-size: 0.85rem;
-  color: var(--fg-muted);
-  letter-spacing: 0.03em;
-}
-
-/* ─── FOOTER ─── */
+/* FOOTER */
 #footer { background: var(--fg-espresso); padding-block: 3rem; color: var(--fg-light); }
 .footer-inner { display: flex; flex-wrap: wrap; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
 .footer-logo img { height: 84px; filter: brightness(0) invert(1); opacity: 1; }
@@ -304,22 +198,22 @@ p + p { margin-top: 1em; }
 .footer-links a { font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
 .footer-links a:hover { color: var(--gold); }
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media (max-width: 640px) {
   .header-nav { display: none; }
   .mobile-nav-toggle { display: flex; }
   .page-hero-bar h1 { font-size: clamp(1.9rem, 8vw, 2.8rem); }
-  .confirm-card { padding: 1.6rem; }
 }
 @media (max-width: 480px) {
-  .confirm-card { padding: 1.4rem; }
-  .footer-links { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
+  .legal { padding: 1.4rem; }
+  .footer-links { gap: 0.75rem 1.25rem; }
 }
 </style>
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
 
-<!-- ─── HEADER ─── -->
+<!-- HEADER -->
 <header id="site-header">
   <a href="index.html" aria-label="Belle Academy Home">
     <img src="mqtq1j0u-mqsb1io8-header-footer-logo.webp" alt="Belle Academy of Cosmetology" class="header-logo" width="64" height="64">
@@ -329,117 +223,80 @@ p + p { margin-top: 1em; }
     <a href="index.html#how-it-works">How It Works</a>
     <a href="index.html#about">About</a>
     <a href="index.html#locations">Locations</a>
-    <a href="lash-tech-request-info.html" class="btn btn-ghost" style="padding:0.65em 1.4em;font-size:0.85rem;background:rgba(200,169,106,0.12);border-color:var(--gold);color:var(--gold);">Request Info</a>
+    <a href="lash-tech-request-info.html" class="btn btn-ghost" style="padding: 0.65em 1.4em; font-size: 0.85rem; background: rgba(200,169,106,0.12); border-color: var(--gold); color: var(--gold);">Request Info</a>
   </nav>
 
-  <!-- Mobile Toggle -->
   <button class="mobile-nav-toggle" aria-label="Toggle Navigation" aria-expanded="false">
     <span class="toggle-bar"></span>
     <span class="toggle-bar"></span>
   </button>
 
-  <!-- Mobile Drawer -->
   <div class="mobile-menu-drawer" aria-hidden="true">
     <nav class="mobile-drawer-nav">
       <a href="index.html#programs" class="mobile-drawer-link">Programs</a>
       <a href="index.html#how-it-works" class="mobile-drawer-link">How It Works</a>
       <a href="index.html#about" class="mobile-drawer-link">About</a>
       <a href="index.html#locations" class="mobile-drawer-link">Locations</a>
-      <div style="margin-top:1.5rem;">
-        <a href="lash-tech-request-info.html" class="btn btn-primary mobile-drawer-btn" style="background:var(--gold);color:var(--bg-dark);">Request Info</a>
+      <div style="margin-top: 1.5rem;">
+        <a href="lash-tech-request-info.html" class="btn btn-primary mobile-drawer-btn" style="background: var(--gold); color: var(--bg-dark);">Request Info</a>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- ─── HERO BAR ─── -->
+<!-- HERO -->
 <div class="page-top">
   <div class="page-hero-bar">
-    <p class="eyebrow reveal">Request Received</p>
-    <h1 class="reveal reveal-delay-1">Thank You. Belle Academy <em class="display-italic">Received Your Request.</em></h1>
-    <p class="sub reveal reveal-delay-2">A team member will contact you soon to confirm your nearest location and tour times.</p>
+    <p class="eyebrow reveal">Legal</p>
+    <h1 class="reveal reveal-delay-1">Terms &amp; <em class="display-italic">Conditions</em></h1>
+    <p class="sub reveal reveal-delay-2">SMS messaging terms for Belle Academy of Cosmetology.</p>
   </div>
 </div>
 
-<!-- ─── CONFIRMATION SECTION ─── -->
-<section id="confirmation-section" class="section-pad">
+<!-- CONTENT -->
+<section id="legal-section" class="section-pad">
   <div class="container">
-    <div class="confirm-layout">
-
-      <!-- Icon -->
-      <div class="confirm-icon reveal">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
-      </div>
-
-      <!-- Confirmation Card -->
-      <div class="confirm-card reveal reveal-delay-1">
-        <span class="confirm-card-eyebrow">What Happens Next</span>
-
-        <ul class="confirm-list" role="list">
-          <li class="confirm-list-item">
-            <span class="confirm-list-icon" aria-hidden="true">
-              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
-            </span>
-            <span>Your request has been received.</span>
-          </li>
-          <li class="confirm-list-item">
-            <span class="confirm-list-icon" aria-hidden="true">
-              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
-            </span>
-            <span>A team member will follow up with you soon.</span>
-          </li>
-          <li class="confirm-list-item">
-            <span class="confirm-list-icon" aria-hidden="true">
-              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
-            </span>
-            <span>Your tour is free. No cost, no obligation.</span>
-          </li>
-          <li class="confirm-list-item">
-            <span class="confirm-list-icon" aria-hidden="true">
-              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
-            </span>
-            <span>There is no pressure to enroll.</span>
-          </li>
-          <li class="confirm-list-item">
-            <span class="confirm-list-icon" aria-hidden="true">
-              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"></polyline></svg>
-            </span>
-            <span>You can ask about schedules, locations, payment plans, and start dates.</span>
-          </li>
-        </ul>
-
-        <div class="confirm-divider" aria-hidden="true"></div>
-
-        <p class="confirm-note">
-          <strong>Come see the school first.</strong> Tour the training location, meet the instructors, and ask every question you have before making any decision.
-        </p>
-      </div>
-
-      <!-- CTA -->
-      <div class="confirm-cta reveal reveal-delay-2">
-        <a href="index.html" class="btn btn-primary">
-          <svg viewBox="0 0 24 24" aria-hidden="true" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-          Back to Lash Tech Program
+    <div class="legal-wrap">
+      <div class="back-link-wrap reveal">
+        <a href="index.html" class="back-link">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Back to Home
         </a>
-        <p class="confirm-cta-note">Questions? We'll be in touch shortly.</p>
       </div>
 
+      <div class="legal">
+        <h2>Belle Academy of Cosmetology SMS Terms and Conditions</h2>
+        <p>By opting in to receive text messages from Belle Academy of Cosmetology, you agree to the following terms.</p>
+        <p>Get appointment reminders and confirmations for our cosmetology, barbering, nails, and eyelash programs. Stay updated on upcoming classes, special events, and important announcements.</p>
+        <p>You can cancel the SMS service at any time. Simply text "STOP" to the shortcode. Upon sending "STOP," we will confirm your unsubscribe status via SMS. Following this confirmation, you will no longer receive SMS messages from us. To rejoin, sign up as you did initially, and we will resume sending SMS messages to you.</p>
+        <p>If you experience issues with the messaging program, reply with the keyword HELP for more assistance, or reach out directly to <a href="mailto:sho@multilevel.agency">sho@multilevel.agency</a>.</p>
+        <p>Carriers are not liable for delayed or undelivered messages.</p>
+        <p>As always, message and data rates may apply for messages sent to you from us and to us from you. You will receive appointment reminders and confirmations. For questions about your text plan or data plan, contact your wireless provider.</p>
+
+        <h2>Privacy</h2>
+        <p>Your privacy matters to us. Please review our <a href="lash-tech-privacy.html">Privacy Policy</a> to learn what information we collect, how we use it, and the choices you have.</p>
+
+        <h2>Contact Us</h2>
+        <p class="legal-contact">
+          <strong>Belle Academy of Cosmetology</strong><br>
+          27A South Commons Road, Waterbury, CT 06704<br>
+          <a href="mailto:info@belleacademy.com">info@belleacademy.com</a>
+        </p>
+
+        <p class="legal-updated">Last updated: October 2026</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
+<!-- FOOTER -->
 <footer id="footer">
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo">
         <img src="mqtq1j0u-mqsb1io8-header-footer-logo.webp" alt="Belle Academy of Cosmetology" width="168" height="84">
       </div>
-      <p class="footer-copy">© 2025 Belle Academy of Cosmetology · Licensed by the Connecticut Department of Public Health</p>
+      <p class="footer-copy">Â© 2025 Belle Academy of Cosmetology Â· Licensed by the Connecticut Department of Public Health</p>
       <nav class="footer-links">
         <a href="index.html#programs">Programs</a>
         <a href="index.html#faq">FAQ</a>
@@ -455,7 +312,6 @@ p + p { margin-top: 1em; }
 (function () {
   'use strict';
 
-  // Mobile Menu
   var mobileToggle = document.querySelector('.mobile-nav-toggle');
   var mobileDrawer = document.querySelector('.mobile-menu-drawer');
   var header       = document.getElementById('site-header');
@@ -484,7 +340,6 @@ p + p { margin-top: 1em; }
     drawerLinks.forEach(function (link) { link.addEventListener('click', closeMenu); });
   }
 
-  // Scroll reveal
   var reveals = document.querySelectorAll('.reveal');
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -496,7 +351,6 @@ p + p { margin-top: 1em; }
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(function (el) { revealObserver.observe(el); });
 
-  // Fire reveals for above-the-fold elements immediately
   setTimeout(function () {
     reveals.forEach(function (el) {
       var rect = el.getBoundingClientRect();
@@ -506,7 +360,6 @@ p + p { margin-top: 1em; }
       }
     });
   }, 80);
-
 })();
 </script>
 

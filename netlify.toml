@@ -15,6 +15,16 @@
   to = "/lash-tech-thank-you.html"
   status = 200
 
+[[redirects]]
+  from = "/terms"
+  to = "/lash-tech-terms.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/lash-tech-privacy.html"
+  status = 200
+
 [[headers]]
   for = "/*.html"
   [headers.values]
